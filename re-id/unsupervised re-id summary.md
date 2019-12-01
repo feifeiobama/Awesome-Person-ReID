@@ -23,7 +23,7 @@ Other experiment settings: MSMT17->Market-1501, MSMT17->DukeMTMC, Market-1501->*
 | TAUDL  | ECCV 18   | tracklet | 63.7 41.2   | 61.7 43.5 |
 | BUC    | AAAI 19   | cluster  | 66.2 38.3   | 47.4 27.5 |
 
-## Sort by author
+## Reading notes
 
 Wei-Shi Zheng (SYSU)
 
