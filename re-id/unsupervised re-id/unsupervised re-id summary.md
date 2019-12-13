@@ -5,6 +5,7 @@
 | method | reference | DukeMTMC->Market1-501 | Market-1501->DukeMTMC |
 | --------- | -------------- | --------- | --------- |
 | MMT | ICLR 20 | 91.1 96.5 74.5 | 81.8 91.2 68.7 |
+| ACT | AAAI 20 | 80.5  \-\-:\-  60.6 | 72.4  \-\-:\-  54.5 |
 | SSG      | ICCV 19 | 80.0 90.0 58.3 | 73.0 80.6 53.4 |
 | PAST | ICCV 19 | 78.4  \-\-:\-  54.6 | 72.4 \-\-\-:\- 54.3 |
 | PDA-Net | ICCV 19 | 75.2 86.3 47.6 | 63.2 77.0 45.1 |
@@ -33,7 +34,7 @@ Wei-Shi Zheng (SYSU)
 | ICCV 19 | [Unsupervised Person Re-Identification by Camera-Aware Similarity Consistency Learning](http://openaccess.thecvf.com/content_ICCV_2019/papers/Wu_Unsupervised_Person_Re-Identification_by_Camera-Aware_Similarity_Consistency_Learning_ICCV_2019_paper.pdf) | CASCL: similarity consistency + intra-camera similarity preserving, global -> top-k neighbor | inconsistent similarity distribution (intra-camera similarity more reliable) |
 | CVPR 19 | [Patch-based Discriminative Feature Learning for Unsupervised Person Re-identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Yang_Patch-Based_Discriminative_Feature_Learning_for_Unsupervised_Person_Re-Identification_CVPR_2019_paper.pdf) | PAUL: discriminative learning with patch feature bank, image-level triplet loss | the gap of similar patches is smaller than similar images    |
 | CVPR 19 | [Unsupervised Person Re-identification by Soft Multilabel Learning](http://openaccess.thecvf.com/content_CVPR_2019/papers/Yu_Unsupervised_Person_Re-Identification_by_Soft_Multilabel_Learning_CVPR_2019_paper.pdf) | MAR: soft multilabel guided negative mining, similarity consistency, cross-view consistent learning | soft multilabel encodes relative comparative characteristic  |
-| CVPR 19 | [Weakly Supervised Person Re-Identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Meng_Weakly_Supervised_Person_Re-Identification_CVPR_2019_paper.pdf) |                                                              |                                                              |
+| CVPR 19 | [Weakly Supervised Person Re-Identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Meng_Weakly_Supervised_Person_Re-Identification_CVPR_2019_paper.pdf) | CV-MIML:                                                     |                                                              |
 | ICCV 17 | [Cross-view Asymmetric Metric Learning for Unsupervised Person Re-identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Yu_Cross-View_Asymmetric_Metric_ICCV_2017_paper.pdf) | CAMEL: project data into shared space, clustering            | view-specific feature distortion                             |
 
 Yi Yang (UTS)
@@ -56,10 +57,10 @@ Shaogang Gong (QMUL)
 
 Pong C Yuen (HKBU)
 
-| proc.   | title                                                        | method                                | motivation                             |
-| ------- | ------------------------------------------------------------ | ------------------------------------- | -------------------------------------- |
-| ECCV 18 | [Robust Anchor Embedding for Unsupervised Video Person Re-Identification in the Wild](http://openaccess.thecvf.com/content_ECCV_2018/papers/Mang_YE_Robust_Anchor_Embedding_ECCV_2018_paper.pdf) | RACE: embedding weight of kNN anchors | imbalanced unlabeled data, scalability |
-| ICCV 17 | [Dynamic Label Graph Matching for Unsupervised Video Re-Identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Ye_Dynamic_Label_Graph_ICCV_2017_paper.pdf) |                                       |                                        |
+| proc.   | title                                                        | method                                                       | motivation                             |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------- |
+| ECCV 18 | [Robust Anchor Embedding for Unsupervised Video Person Re-Identification in the Wild](http://openaccess.thecvf.com/content_ECCV_2018/papers/Mang_YE_Robust_Anchor_Embedding_ECCV_2018_paper.pdf) | RACE: embedding weight of kNN anchors                        | imbalanced unlabeled data, scalability |
+| ICCV 17 | [Dynamic Label Graph Matching for Unsupervised Video Re-Identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Ye_Dynamic_Label_Graph_ICCV_2017_paper.pdf) | DGM: cross-camera graph matching by neighborhood cost with re-weighed labels | cross-camera label estimation          |
 
 #### Others authors
 
@@ -69,6 +70,12 @@ ICLR 20 (1/1)
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------- |
 | -    | [Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification](https://openreview.net/pdf?id=rJlnOhVYPS) | MMT: optimize with soft pseudo label generated from the other network | noisy pseudo labels caused by clustering |
 
+AAAI 20 (1/1)
+
+| from | title                                                        | method                                                       | motivation                             |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------- |
+| XMU  | [Asymmetric Co-Teaching for Unsupervised Cross-Domain Person Re-Identification](https://arxiv.org/pdf/1912.01349.pdf) | ACT: asymetric co-teaching trained by DBSCAN labeled inliners and outliers | noisy pseudo labels, consider outliers |
+
 ICCV 19 (5/6) (Wei-shi Zheng: 1)
 
 | from   | title                                                        | method                                                       | motivation                                              |
@@ -76,7 +83,7 @@ ICCV 19 (5/6) (Wei-shi Zheng: 1)
 | NJU    | [A Novel Unsupervised Camera-aware Domain Adaptation Framework for Person Re-identification](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qi_A_Novel_Unsupervised_Camera-Aware_Domain_Adaptation_Framework_for_Person_Re-Identification_ICCV_2019_paper.pdf) | CCE: cross-domain camera equiprobability, triplet selection in fragments | camera-level subdomains, temporal continuity            |
 | NTU    | [Cross-Dataset Person Re-Identification via Unsupervised Pose Disentanglement and Adaptation](http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Cross-Dataset_Person_Re-Identification_via_Unsupervised_Pose_Disentanglement_and_Adaptation_ICCV_2019_paper.pdf) | PDA-Net: pose-guided image recovery and domain translation   | jointly learn domain- and pose-invariant representation |
 | UIUC   | [Self-similarity Grouping: A Simple Unsupervised Cross Domain Adaptation Approach for Person Re-identification](http://openaccess.thecvf.com/content_ICCV_2019/papers/Fu_Self-Similarity_Grouping_A_Simple_Unsupervised_Cross_Domain_Adaptation_Approach_for_ICCV_2019_paper.pdf) | SSG: 3 sets of groups, triplet loss; semi-supervised         | potential similarity from global to local               |
-| Tongji | [Self-Training With Progressive Augmentation for Unsupervised Cross-Domain Person Re-Identification](http://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Self-Training_With_Progressive_Augmentation_for_Unsupervised_Cross-Domain_Person_Re-Identification_ICCV_2019_paper.pdf) | PAST: 2-stage: ranking-based triplet loss, global classification loss (mean feature as classifier) | unreliable pseudo labels, triplets focus on local info  |
+| Tongji | [Self-Training With Progressive Augmentation for Unsupervised Cross-Domain Person Re-Identification](http://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Self-Training_With_Progressive_Augmentation_for_Unsupervised_Cross-Domain_Person_Re-Identification_ICCV_2019_paper.pdf) | PAST: 2-stage: CTL+RTL, global classification loss (HDBSCAN clustering, mean feature classifier) | unreliable pseudo labels, triplets focus on local info  |
 | CASIA  | [Unsupervised Graph Association for Person Re-identification](http://openaccess.thecvf.com/content_ICCV_2019/papers/Wu_Unsupervised_Graph_Association_for_Person_Re-Identification_ICCV_2019_paper.pdf) | UGA: intra-camera tracklet classification, pull inter-camera pairs | underlying positive pair, lower GPU memory              |
 
 CVPR 19 (1/5) (Wei-shi Zheng: 3, Yi Yang: 1)
