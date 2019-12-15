@@ -1,3 +1,5 @@
+## Group re-id notes
+
 Duke: DukeMTMC group dataset, Road: Road group dataset
 
 | from     | method                                                       | motivation                                       | Duke rank1 | Duke rank5 | Road rank1 | Road rank5 |

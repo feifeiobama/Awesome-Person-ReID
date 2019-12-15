@@ -1,3 +1,6 @@
+## Person search notes
+
+
 | from  | method                                               | motivation                    | mAP (CUHK-SYSU) | top-1 (CUHK-SYSU) | mAP (PRW) | top-1 (PRW) |
 | ----- | ---------------------------------------------------- | ----------------------------- | --------------- | ----------------- | --------- | ----------- |
 | CUHK  | (CVPR 17) OIM: online matching with lookup table     | joint detection and reID      | 75.5            | 78.7              | 21.3      | 49.9        |
