@@ -6,11 +6,15 @@ training -> probablistic vote
 
 regress the displacement vector to reference point & object class
 
+> 
+
 #### VoteNet
 
 end2end train: sampling (PointNet) -> voting -> clustering -> proposal (PointNet)
 
 supervision of center, heading angle, box size, semantic classification
+
+> 
 
 #### Survey
 
