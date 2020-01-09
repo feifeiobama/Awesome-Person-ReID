@@ -7,6 +7,7 @@
 | method | reference | DukeMTMC->Market1-501 | Market-1501->DukeMTMC |
 | --------- | -------------- | --------- | --------- |
 | MMT | ICLR 20 | 91.1 96.5 74.5 | 81.8 91.2 68.7 |
+| GPP |  | 84.1 92.8 63.8 | 74.0 83.7 54.4 |
 | ACT | AAAI 20 | 80.5  \-\-:\-  60.6 | 72.4  \-\-:\-  54.5 |
 | SSG      | ICCV 19 | 80.0 90.0 58.3 | 73.0 80.6 53.4 |
 | PAST | ICCV 19 | 78.4  \-\-:\-  54.6 | 72.4 \-\-\-:\- 54.3 |
@@ -43,6 +44,7 @@ Yi Yang (UTS)
 
 | proc.   | title                                                        | method                                                       | motivation                                                   |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|         | [Learning to Adapt Invariance in Memory for Person Re-identification](https://arxiv.org/pdf/1908.00485.pdf) | GPP:                                                         |                                                              |
 | CVPR 19 | [Invariance Matters: Exemplar Memory for Domain Adaptive Person Re-identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zhong_Invariance_Matters_Exemplar_Memory_for_Domain_Adaptive_Person_Re-Identification_CVPR_2019_paper.pdf) | ECN: exemplar memory for invariance learning                 | intra-domain variations, exemplar-, camera-, neighborhood-invariance |
 | AAAI 19 | [A Bottom-Up Clustering Approach to Unsupervised Person Re-Identification](https://www.aaai.org/ojs/index.php/AAAI/article/view/4898) | BUC: bottom-up clustering + repelled loss training, diversity regularization | similarity and diversity in training data as supervision     |
 | ECCV 18 | [Generalizing A Person Retrieval Model Hetero- and Homogeneously](http://openaccess.thecvf.com/content_ECCV_2018/papers/Zhun_Zhong_Generalizing_A_Person_ECCV_2018_paper.pdf) |                                                              |                                                              |
@@ -70,7 +72,7 @@ ICLR 20 (1/1)
 
 | from | title                                                        | method                                                       | motivation                               |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------- |
-| -    | [Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification](https://openreview.net/pdf?id=rJlnOhVYPS) | MMT: optimize with soft pseudo label generated from the other network | noisy pseudo labels caused by clustering |
+| CUHK | [Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification](https://openreview.net/pdf?id=rJlnOhVYPS) | MMT: optimize with soft pseudo label generated from the other network | noisy pseudo labels caused by clustering |
 
 AAAI 20 (1/1)
 
