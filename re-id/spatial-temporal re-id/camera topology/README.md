@@ -1,10 +1,13 @@
+## Camera topology notes
+
 | from   | title                                                        | method                                                       |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| McGill | (CRV 05) Topology inference for a vision-based sensor network | MCEM to solve connectivity                                   |
-| MIT    | (ICCV 05) Inference of Non-Overlapping Camera Network Topology by Measuring Statistical Dependence |                                                              |
-| UCR    | (ICIP 07) Determining topology in a distributed camera network |                                                              |
-| QMUL   | (CVPR 09) Multi-Camera Activity Correlation Analysis         | event correlation between semantic regions, edge thickness threshold |
-| GIST   | (PRL 17) Distance-based Camera Network Topology Inference for Person Re-identification | scale estimation with person height, speed & distance estimation |
+| CU     | (CVPR 99) Bayesian Multi-camera Surveillance                 | posterior decomposed into incident chains, MAP->LP           |
+| KUL    | (CVPR 04) Bridging the Gaps between Cameras                  | cross correlation between zones (classified by GMM)          |
+| McGill | (CRV 05) Topology inference for a vision-based sensor network | use MCEM to solve connectivity                               |
+| MIT    | (ICCV 05) Inference of Non-Overlapping Camera Network Topology by Measuring Statistical Dependence | MAP approximation for MI with MCMC                           |
+| QMUL   | (CVPR 09) Multi-Camera Activity Correlation Analysis         | activity correlation between regions (clustered by decomposition) |
+| NTU    | (TMM 11) Adaptive Learning for Target Tracking and True Linking Discovering Across Multiple Non-Overlapping Cameras | GMM with merge/split, remove **weak links**                  |
+| GIST   | (PRL 17) Distance-based Camera Network Topology Inference for Person Re-identification | scale & speed & distance estimation                          |
 | GIST   | (ICCV 17 Workshop) Unified Framework for Automated Person Re-identification and Camera Network Topology Inference in Camera Networks | connectivity check via gaussian model                        |
-|        |                                                              |                                                              |
 
