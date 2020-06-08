@@ -4,12 +4,15 @@
 
 #### Adaption methods  (Rank-1 Rank-5 mAP)
 
-| method | reference | DukeMTMC->Market1-501 | Market-1501->DukeMTMC |
+| method | reference | DukeMTMC->Market-1501 | Market-1501->DukeMTMC |
 | --------- | -------------- | --------- | --------- |
 | MMT | ICLR 20 | 91.1 96.5 74.5 | 81.8 91.2 68.7 |
-| GPP |  | 84.1 92.8 63.8 | 74.0 83.7 54.4 |
+| AD-Cluster | CVPR 20 | 86.7 94.4 68.3 | 72.6 82.5 54.1 |
+| SNR | CVPR 20 | 82.8  --:-  61.7 | 76.3  --:-  58.1 |
 | ACT | AAAI 20 | 80.5  \-\-:\-  60.6 | 72.4  \-\-:\-  54.5 |
+| MMCL | CVPR 20 | 84.4 92.8 60.4 | 72.4 82.9 51.3 |
 | SSG      | ICCV 19 | 80.0 90.0 58.3 | 73.0 80.6 53.4 |
+| HCT | CVPR 20 | 80.0 91.6 56.4 | 69.6 83.4 50.7 |
 | PAST | ICCV 19 | 78.4  \-\-:\-  54.6 | 72.4 \-\-\-:\- 54.3 |
 | PDA-Net | ICCV 19 | 75.2 86.3 47.6 | 63.2 77.0 45.1 |
 | ECN | CVPR 19 | 75.1 87.6 43.0 | 63.3 75.8 40.4 |
@@ -34,20 +37,20 @@ Wei-Shi Zheng (SYSU)
 
 | proc.   | title                                                        | method                                                       | motivation                                                   |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| CVPR 20 | [Weakly supervised discriminative feature learning with state information for person identification](https://arxiv.org/pdf/2002.11939.pdf) | WDBR + DFDR: classification loss with MPI-driven decision + state sub-distribution drift regularization | state-relevant feature distortion                            |
 | ICCV 19 | [Unsupervised Person Re-Identification by Camera-Aware Similarity Consistency Learning](http://openaccess.thecvf.com/content_ICCV_2019/papers/Wu_Unsupervised_Person_Re-Identification_by_Camera-Aware_Similarity_Consistency_Learning_ICCV_2019_paper.pdf) | CASCL: similarity consistency + intra-camera similarity preserving, global -> top-k neighbor | inconsistent similarity distribution (intra-camera similarity more reliable) |
 | CVPR 19 | [Patch-based Discriminative Feature Learning for Unsupervised Person Re-identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Yang_Patch-Based_Discriminative_Feature_Learning_for_Unsupervised_Person_Re-Identification_CVPR_2019_paper.pdf) | PAUL: discriminative learning with patch feature bank, image-level triplet loss | the gap of similar patches is smaller than similar images    |
 | CVPR 19 | [Unsupervised Person Re-identification by Soft Multilabel Learning](http://openaccess.thecvf.com/content_CVPR_2019/papers/Yu_Unsupervised_Person_Re-Identification_by_Soft_Multilabel_Learning_CVPR_2019_paper.pdf) | MAR: soft multilabel guided negative mining, similarity consistency, cross-view consistent learning | soft multilabel encodes relative comparative characteristic  |
-| CVPR 19 | [Weakly Supervised Person Re-Identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Meng_Weakly_Supervised_Person_Re-Identification_CVPR_2019_paper.pdf) | CV-MIML:                                                     |                                                              |
+| CVPR 19 | [Weakly Supervised Person Re-Identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Meng_Weakly_Supervised_Person_Re-Identification_CVPR_2019_paper.pdf) | CV-MIML: intra-bag alignment, cross-view bag alignment       | video-level weak label                                       |
 | ICCV 17 | [Cross-view Asymmetric Metric Learning for Unsupervised Person Re-identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Yu_Cross-View_Asymmetric_Metric_ICCV_2017_paper.pdf) | CAMEL: project data into shared space, clustering            | view-specific feature distortion                             |
 
 Yi Yang (UTS)
 
 | proc.   | title                                                        | method                                                       | motivation                                                   |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|         | [Learning to Adapt Invariance in Memory for Person Re-identification](https://arxiv.org/pdf/1908.00485.pdf) | GPP:                                                         |                                                              |
 | CVPR 19 | [Invariance Matters: Exemplar Memory for Domain Adaptive Person Re-identification](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zhong_Invariance_Matters_Exemplar_Memory_for_Domain_Adaptive_Person_Re-Identification_CVPR_2019_paper.pdf) | ECN: exemplar memory for invariance learning                 | intra-domain variations, exemplar-, camera-, neighborhood-invariance |
 | AAAI 19 | [A Bottom-Up Clustering Approach to Unsupervised Person Re-Identification](https://www.aaai.org/ojs/index.php/AAAI/article/view/4898) | BUC: bottom-up clustering + repelled loss training, diversity regularization | similarity and diversity in training data as supervision     |
-| ECCV 18 | [Generalizing A Person Retrieval Model Hetero- and Homogeneously](http://openaccess.thecvf.com/content_ECCV_2018/papers/Zhun_Zhong_Generalizing_A_Person_ECCV_2018_paper.pdf) |                                                              |                                                              |
+| ECCV 18 | [Generalizing A Person Retrieval Model Hetero- and Homogeneously](http://openaccess.thecvf.com/content_ECCV_2018/papers/Zhun_Zhong_Generalizing_A_Person_ECCV_2018_paper.pdf) | HHL: camera invariance + domain correctness                  | intra- and inter- domain variance                            |
 | CVPR 18 | [Exploit the Unknown Gradually: One-Shot Video-Based Person Re-Identification by Stepwise Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Wu_Exploit_the_Unknown_CVPR_2018_paper.pdf) | EUG: select more pseudo-labeled tracklet for training during iteration, distance-based sampling criterion | initial pseudo-label predictions are unreliable              |
 | CVPR 18 | [Image-Image Domain Adaptation with Preserved Self-Similarity and Domain-Dissimilarity for Person Re-identification](http://openaccess.thecvf.com/content_cvpr_2018/papers/Deng_Image-Image_Domain_Adaptation_CVPR_2018_paper.pdf) | SPGAN: contrastive loss on self-similarity and domain-dissimilarity | ID should be preserved after image translation, domains contain entirely different ID sets |
 | ICCV 17 | [Unlabeled Samples Generated by GAN Improve the Person Re-identification Baseline in vitro](http://openaccess.thecvf.com/content_ICCV_2017/papers/Zheng_Unlabeled_Samples_Generated_ICCV_2017_paper.pdf) | LSRO: GAN, assign uniform label to generated data            | to use unlabeled data                                        |
@@ -67,6 +70,16 @@ Pong C Yuen (HKBU)
 | ICCV 17 | [Dynamic Label Graph Matching for Unsupervised Video Re-Identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Ye_Dynamic_Label_Graph_ICCV_2017_paper.pdf) | DGM: cross-camera graph matching by neighborhood cost with re-weighed labels | cross-camera label estimation          |
 
 #### Others authors
+
+CVPR 20 (5/6)
+
+| from   | title                                                        | method                                                  | motivation                       |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------- | -------------------------------- |
+| Huawei | [Unsupervised Person Re-identification via Softened Similarity Learning](https://arxiv.org/pdf/2004.03547.pdf) | softened similarity + part + cross-camera encouragement | discard hard quantization loss   |
+| PKU    | [AD-Cluster: Augmented Discriminative Clustering for Domain Adaptive Person Re-identification](https://arxiv.org/pdf/2004.08787.pdf) | generate samples with diverse camera styles             | low diversity in cluster         |
+| PKU    | [Unsupervised Person Re-identification via Multi-label Classification](https://arxiv.org/pdf/2004.09228.pdf) | MMCL: multi-label + memory                              |                                  |
+| USTC   | [Style Normalization and Restitution for Generalizable Person Re-identification](https://arxiv.org/pdf/2005.11037.pdf) | SNR: style normalization + distill id-relevant feature  | filter out id-irrelevant feature |
+| NUDT   | [Hierarchical Clustering with Hard-batch Triplet Loss for Person Re-identification](https://arxiv.org/pdf/1910.12278.pdf) | HCT: hierarchinal  clustering + hard-batch              | pseudo label quality             |
 
 ICLR 20 (1/1)
 
