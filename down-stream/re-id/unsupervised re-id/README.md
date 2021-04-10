@@ -6,8 +6,11 @@
 
 | method | reference | DukeMTMC->Market-1501 | Market-1501->DukeMTMC |
 | --------- | -------------- | --------- | --------- |
+| GLT | CVPR 21 | 92.2 96.5 79.5 | 82.0 90.2 69.2 |
+| UNRN | AAAI 21 | 91.9 96.1 78.1 | 82.0 90.7 69.1 |
+| SpCL | NIPS 20 | 90.3 96.2 76.7 | 82.9 90.1 68.8 |
 | MEB-Net | ECCV 20 | 89.9 96.0 76.0 | 79.6 88.3 66.1 |
-| MMT | ICLR 20 | 91.1 96.5 74.5 | 81.8 91.2 68.7 |
+| MMT | ICLR 20 | 87.7 94.9 71.2 | 78.0 88.8 65.1 |
 | CycAs | ECCV 20 | 84.8  --:-  64.8 | 77.9  --:-  60.1 |
 | AD-Cluster | CVPR 20 | 86.7 94.4 68.3 | 72.6 82.5 54.1 |
 | SNR | CVPR 20 | 82.8  --:-  61.7 | 76.3  --:-  58.1 |
@@ -30,7 +33,10 @@ Other experiment settings: MSMT17->Market-1501, MSMT17->DukeMTMC, Market-1501->*
 
 | method | reference | type | Market1-501 | DukeMTMC |
 | --------- | -------------- | -------------- | --------- | --------- |
+| CAP | AAAI 21 | cluster | 91.4 79.2 | 81.1 67.3 |
+| IICS | CVPR'21 | cluster | 89.5 72.9 | 80.0 64.4 |
 | UGA | ICCV 19 | tracklet | 87.2 70.3 | 75.0 53.3 |
+| MetaCam | CVPR'21 | cluster | 83.9 61.7 | 73.8 53.8 |
 | TAUDL  | ECCV 18   | tracklet | 63.7 41.2   | 61.7 43.5 |
 | BUC    | AAAI 19   | cluster  | 66.2 38.3   | 47.4 27.5 |
 
@@ -88,13 +94,20 @@ Pong C Yuen (HKBU)
 
 #### Others authors
 
+AAAI 21
+
+| from | title                                                        | method                              | motivation                            |
+| ---- | ------------------------------------------------------------ | ----------------------------------- | ------------------------------------- |
+| USTC | [Exploiting Sample Uncertainty for Domain Adaptive Person Re-Identification](https://arxiv.org/pdf/2012.08733.pdf) | UNRN: weighted contrastive loss     | consistency between teacher & student |
+| ZJU  | [Camera-aware Proxies for Unsupervised Person Re-Identification](https://arxiv.org/pdf/2012.10674.pdf) | CAP: intra-camera & inter-camera CL | camera variance                       |
+
 ECCV 20 (3/5) (Yonghong Tian: 1, Shiliang Zhang: 1)
 
-| from | title                                                        | method                                                       | motivation              |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------- |
-| UAE  | [Interpretable and Generalizable Person Re-identification with Query-adaptive Convolution and Temporal Lifting](https://arxiv.org/pdf/1904.10424.pdf) | QAConv: query-adaptive convolutional + TLift: $\Delta T$ from pivot set | generalizablity         |
-| THU  | [CycAs: Self-supervised Cycle Association for Learning Re-identifiable Descriptions](https://arxiv.org/pdf/2007.07577.pdf) | CycAs: cycle association on asymmetric pairs                 | data association in MOT |
-| CMU  | [Joint Disentangling and Adaptation for Cross-Domain Person Re-Identification](https://arxiv.org/pdf/2007.10315.pdf) |                                                              |                         |
+| from | title                                                        | method                                                       | motivation                 |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- |
+| UAE  | [Interpretable and Generalizable Person Re-identification with Query-adaptive Convolution and Temporal Lifting](https://arxiv.org/pdf/1904.10424.pdf) | QAConv: query-adaptive convolutional + TLift: $\Delta T$ from pivot set | generalizablity            |
+| THU  | [CycAs: Self-supervised Cycle Association for Learning Re-identifiable Descriptions](https://arxiv.org/pdf/2007.07577.pdf) | CycAs: cycle association on asymmetric pairs                 | data association in MOT    |
+| CMU  | [Joint Disentangling and Adaptation for Cross-Domain Person Re-Identification](https://arxiv.org/pdf/2007.10315.pdf) | DG-Net++: DG-Net + adversarial alignment + identification loss | disentangling + adaptation |
 
 CVPR 20 (3/6) (Wei-shi Zheng: 1, Yonghong Tian: 1, Shiliang Zhang: 1)
 
