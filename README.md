@@ -325,8 +325,8 @@ CVPR 17 (2/2)
 * (CVPR 21) Lifelong Person Re-Identification via Adaptive Knowledge Accumulation
 * (AAAI 22) Lifelong Person Re-identification by Pseudo Task Knowledge Preservation
 * (CVPR 22) Lifelong Unsupervised Domain Adaptive Person Re-Identification with Coordinated Anti-forgetting and Adaptation
-* (ACM MM 22) Patch-based Knowledge Distillation for Lifelong Person Re-Identification
 * (ACM MM 22) Meta Reconciliation Normalization for Lifelong Person Re-Identification
+* (ACM MM 22) Patch-based Knowledge Distillation for Lifelong Person Re-Identification
 
 
 
