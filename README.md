@@ -9,11 +9,13 @@ This repository contains a curated list of person re-identification papers (most
   * [Spatial-temporal reID](##Spatial-temporal-reID)
 * [Unsupervised reID](#Unsupervised-reID)
 * [Generalizable reID](#Generalizable-reID)
-* [Cross-modality reID](#Cross-modality-reID)
 * [Lifelong reID](#Lifelong-reID)
-* [Long-term reID](#Long-term-reID)
-* [Group reID](#Group-reID)
-* [Person search](#Person-search)
+* [Misc](#Misc)
+  * [Cross-modality reID](##Cross-modality-reID)
+  * [Long-term reID](##Long-term-reID)
+  * [Group reID](##Group-reID)
+  * [Person search](##Person-search)
+
 * [Datasets](#Datasets)
 
 
@@ -316,7 +318,22 @@ CVPR 17 (2/2)
 
 
 
-## Cross-modality reID
+##Lifelong reID
+
+* (AVSS 19) Continuous Learning without Forgetting for Person Re-Identification
+* (AAAI 21) Generalising without Forgetting for Lifelong Person Re-Identification
+* (WACV 21) Continual Representation Learning for Biometric Identification
+* (CVPR 21) Lifelong Person Re-Identification via Adaptive Knowledge Accumulation
+* (AAAI 22) Lifelong Person Re-identification by Pseudo Task Knowledge Preservation
+* (CVPR 22) Lifelong Unsupervised Domain Adaptive Person Re-Identification with Coordinated Anti-forgetting and Adaptation
+* (ACM MM 22) Patch-based Knowledge Distillation for Lifelong Person Re-Identification
+* (ACM MM 22) Meta Reconciliation Normalization for Lifelong Person Re-Identification
+
+
+
+## Misc
+
+### Cross-modality reID
 
 * (ICCV 17) RGB-Infrared Cross-Modality Person Re-Identification
 * (IJCAI 18) Cross-Modality Person Re-Identification with Generative Adversarial Training
@@ -340,20 +357,7 @@ CVPR 17 (2/2)
 
 
 
-##Lifelong reID
-
-* (AVSS 19) Continuous Learning without Forgetting for Person Re-Identification
-* (AAAI 21) Generalising without Forgetting for Lifelong Person Re-Identification
-* (WACV 21) Continual Representation Learning for Biometric Identification
-* (CVPR 21) Lifelong Person Re-Identification via Adaptive Knowledge Accumulation
-* (AAAI 22) Lifelong Person Re-identification by Pseudo Task Knowledge Preservation
-* (CVPR 22) Lifelong Unsupervised Domain Adaptive Person Re-Identification with Coordinated Anti-forgetting and Adaptation
-* (ACM MM 22) Patch-based Knowledge Distillation for Lifelong Person Re-Identification
-* (ACM MM 22) Meta Reconciliation Normalization for Lifelong Person Re-Identification
-
-
-
-##Long-term reID
+###Long-term reID
 
 * (TPAMI 19) Person Re-Identification by Contour Sketch under Moderate Clothing Change
 * (IJCNN 19) Celebrities-ReID: A Benchmark for Clothes Variation in Long-Term Person Re-Identification
@@ -362,7 +366,7 @@ CVPR 17 (2/2)
 
 
 
-## Group reID
+### Group reID
 
 * (BMVC 09) Associating Groups of People
 * (ICCV 17) Group Re-Identification via Unsupervised Transfer of Sparse Features Encoding
@@ -386,7 +390,7 @@ Duke: DukeMTMC group dataset, Road: Road group dataset
 
 
 
-## Person search
+### Person search
 
 * (ACM MM 14) Person Search in a Scene by Jointly Modeling People Commonness and Person Uniqueness
 * (CVPR 17) Joint Detection and Identification Feature Learning for Person Search
