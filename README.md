@@ -388,15 +388,6 @@ Duke: DukeMTMC group dataset, Road: Road group dataset
 | SJTU  | (TCYB 19) hand=>conv                                         | utilize dl                                   | 48.4       | 75.2       | 80.2       | 93.8       |
 | NTHU  | (arXiv 19) DotSCN: learn single&couple representation on transferred reID dataset | too few images to learn group representation | 86.4       | 98.8       | 84.0       | 95.1       |
 
-PREF 及之前的工作：(1) 设计descriptor (2) 当作patch matching任务
-
-MGR 与 TSCN 比较（唯二基于检测个体的工作）
-
-|      | group similarity                                 | geometry信息   |
-| ---- | ------------------------------------------------ | -------------- |
-| MGR  | 基于single similarity和距离，自下而上计算4项融合 | 利用图片中距离 |
-| TSCN | 融合single similarity和另学的couple similarity   | 完全丢弃       |
-
 
 
 ## Person search
@@ -425,7 +416,7 @@ MGR 与 TSCN 比较（唯二基于检测个体的工作）
 | TUM   | (CVPR 19) QEEPS: query-guided SSE-Net, RPN, simNet   | leverage query extensively    | 88.9            | 89.1              | 39.1      | 80.0        |
 | HUST  | (ICCV 19) regression => reID gradient                | refine detection              | 93.0            | 94.2              | 42.9      | 70.2        |
 
-person search = detection + re-identification，大部分工作改进其中一部分，或都改进
+person search = detection + re-identification
 
 
 
