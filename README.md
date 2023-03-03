@@ -8,71 +8,131 @@ Content
 
 * [Survey](#Survey)
 * [Supervised reID](#Supervised reID)
-  * [Structural reID](##Structural reID)
+  * [Pose-guided reID](##Pose-guided reID)
+  * [Attribute-guided reID](##Attribute-guided reID)
   * [Spatial-temporal reID](##Spatial-temporal reID)
 * [Unsupervised reID](#Unsupervised reID)
-* [Cross-modal reID](#Cross-modal reID)
+* [Generalizable reID](#Generalizable reID)
+* [Cross-modality reID](#Cross-modality reID)
 * [Lifelong reID](#Lifelong reID)
 * [Long-term reID](#Long-term reID)
-* [Person search](#Person search)
 * [Group reID](#Group reID)
+* [Person search](#Person search)
 * [Datasets](#Datasets)
 
 
 
 ## Survey
 
-
+* (Book 14) Person Re-Identification
+* (arXiv 16) Person Re-Identification: Past, Present and Future
+* (TPAMI 18) A Systematic Evaluation and Benchmark for Person Re-Identification: Features, Metrics, and Datasets
+* (TCSVT 19) A Survey of Open-World Person Re-Identification
+* (IJCAI 20) Beyond Intra-Modality: A Survey of Heterogeneous Person Re-Identification
+* (TPAMI 21) Deep Learning for Person Re-Identification: A Survey and Outlook
+* (arXiv 22) Person Re-Identification: A Retrospective on Domain Specific Open Challenges and Future Trends
 
 
 
 ## Supervised reID
 
+#### Global feature learning
+
+**Verification**
+
+* (ICPR 14) Deep Metric Learning for Person Re-Identification
+* (CVPR 15) An Improved Deep Learning Architecture for Person Re-Identification
+* (ECCV 16) Gated Siamese Convolutional Neural Network Architecture for Human Re-Identification
+* (ICCV 17) A Two Stream Siamese Convolutional Neural Network for Person Re-Identification
+
+**Identification**
+
+* (CVPR 16) Learning a Discriminative Null Space for Person Re-Identification
+* (CVPR 17) Re-ranking Person Re-Identification with $k$-reciprocal Encoding
+* (ICCV 17) SVDNet for Pedestrian Retrieval
+* (arXiv 17) In Defense of the Triplet Loss for Person Re-Identification
+* (TOMCCAP 17) A Discriminatively Learned CNN Embedding for Person Reidentification
+* (CVPRW 19) Bag of Tricks and a Strong Baseline for Deep Person Re-Identification
+* (ICCV 19) Omni-Scale Feature Learning for Person Re-Identification
+* (ICCV 21) TransReID: Transformer-based Object Re-Identification
+* TODO: more transformers
+
+Attention
+
+* (CVPR 18) Harmonious Attention Network for Person Re-Identification
+* (CVPR 19) Towards Rich Feature Discovery with Class Activation Maps Augmentation for Person Re-Identification
+* (CVPR 19) Interaction-and-Aggregation Network for Person Re-Identification
+* (ICCV 19) Mixed High-Order Attention Network for Person Re-Identification
+* (ICCV 19) Second-Order Non-local Attention Networks for Person Re-Identification
+* (ICCV 19) ABD-Net: Attentive but Diverse Person Re-Identification
+* (CVPR 20) Relation-Aware Global Attention for Person Re-Identification
+
+#### Local feature learning
+
+* (CVPR 14) DeepReID: Deep Filter Pairing Neural Network for Person Re-Identification
+* (ICCV 15) Person Re-Identification with Correspondence Structure Learning
+* (arXiv 17) AlignedReID: Surpassing Human-Level Performance in Person Re-Identification
+* (CVPR 18) End-to-End Deep Kronecker-Product Matching for Person Re-Identification
+* (ECCV 18) Beyond Part Models: Person Retrieval with Refined Part Pooling (and a Strong Convolutional Baseline)
+* (ACM MM 18) Learning Discriminative Features with Multiple Granularities for Person Re-Identification
+* (CVPR 19) Patch-based Discriminative Feature Learning for Unsupervised Person Re-Identification
+* TODO: part based / occluded
 
 
-### Structural reID
 
-PDC (ICCV'17), PGR (TPAMI'19) part or recombined parts as input
+### Pose-guided reID
 
-PN-GAN (ECCV'18) synthesize images of 8 canonical poses, fuse 9 features
+* (CVPR 17) Spindle Net: Person Re-Identification with Human Body Region Guided Feature Decomposition and Fusion
+* (ICCV 17) Deeply-Learned Part-Aligned Representations for Person Re-Identification
+* (ICCV 17) Pose-driven Deep Convolutional Model for Person Re-Identification
+* (CVPR 18) Pose Transferrable Person Re-Identification
+* (ECCV 18) Pose-Normalized Image Generation for Person Re-Identification
+* (CVPR 18) Human Semantic Parsing for Person Re-Identification
+* (NeurIPS 18) FD-GAN: Pose-guided Feature Distilling GAN for Robust Person Re-Identification
+* (TIP 19) Pose-Invariant Embedding for Deep Person Re-Identification
+* (CVPR 19) Densely Semantically Aligned Person Re-Identification
+* (ECCV 20) Identity-Guided Human Semantic Parsing for Person Re-Identification
+* (TPAMI 22) Pose-Guided Representation Learning for Person Re-Identification
+* (TPAMI 22) Multi-Task Learning With Coarse Priors for Robust Part-Aware Person Re-Identification
+* TODO: person-reid-3d: estimated mesh as input
 
-FD-GAN (NeurIPS'18) distill pose-unrelated info
 
-PersonX (CVPR'19) synthesize shape, pose, viewpoint, ...
 
-DG-Net (CVPR'19) ? disentangle appearance and structure, learn from both
+### Attribute-guided reID
 
-Contour (TPAMI'19) contour as input
-
-person-reid-3d: estimated mesh as input
+* (ECCV 16) Deep Attributes Driven Multi-Camera Person Re-Identification
+* (arXiv 17) Improving Person Re-identification by Attribute and Identity Learning
+* (CVPR 18) Transferable Joint Attribute-Identity Deep Learning for Unsupervised Person Re-Identification
+* (CVPR 19) AANet: Attribute Attention Network for Person Re-Identifications
 
 
 
 ### Spatial-temporal reID
 
-D: DukeMTMC, M: Market-1501
-
-| from | method                                                       | motivation                                   | full name | D rank1 | D mAP | M rank1 | M mAP |
-| ---- | ------------------------------------------------------------ | -------------------------------------------- | --------- | ------- | ----- | ------- | ----- |
-| UCF  | (ECCV 16) [PSE](https://link.springer.com/chapter/10.1007/978-3-319-46475-6_8): speed, grouping, invisible speed | crowds & social force                        |           |         |       |         |       |
-| WHU  | (MMM 16) [CNPR](https://link.springer.com/chapter/10.1007/978-3-319-27671-7_15): fit Weibull distribution | constraints of min walking time              |           |         |       |         |       |
-| GIST | (17) distance based camera network topology inference        | infer topology, deal with speed              |           |         |       |         |       |
-| GIST | (ICCV 17 Workshop) [unified](https://arxiv.org/abs/1704.07085): R-squared statics; cam2cam & zone2zone | solve ... jointly                            |           |         |       |         |       |
-| SCUT | (CVPR 18) [TFusion](https://arxiv.org/abs/1803.07293): bayesian fusion; learn to rank | similarity, FP, FT are independent of camera |           |         |       | 73.1    |       |
-| SYSU | (AAAI 19) [st-ReID](https://arxiv.org/abs/1812.03282): laplace smoothing + logistic | joint metric                                 |           | 94.4    | 83.9  | 98.1    | 87.6  |
-|      | st-ReID + k-reciprocal                                       |                                              |           | 94.5    | 92.7  | 98.0    | 95.5  |
-| USTC | [TASTR](https://arxiv.org/abs/1910.11560): within-/cross-camera triplet loss | precision of tracklet association            |           | 74.1    | 54.4  |         |       |
+* (CVPR 99) Bayesian Multi-Camera Surveillance
+* (ICCV 03) Tracking across Multiple Cameras with Disjoint Views
+* (CVPR 04) Bridging the Gaps between Cameras
+* (CVPR 09) Multi-Camera Activity Correlation Analysis
+* (ECCV 16) Human Re-Identification in Crowd Videos Using Personal, Social and Environmental Constraints
+* (MMM 16) Camera Network Based Person Re-Identification by Leveraging Spatial-Temporal Constraint and Multiple Cameras Relations
+* (arXiv 17) Distance-based Camera Network Topology Inference for Person Re-identification
+* (ICCVW 17) Unified Framework for Automated Person Re-Identification and Camera Network Topology Inference in Camera Networks
+* (CVPR 18) Unsupervised Cross-Dataset Person Re-Identification by Transfer Learning of Spatial-Temporal Patterns
+* (AAAI 19) Spatial-Temporal Person Re-Identification
+* (ICCV 21) Learning Instance-Level Spatial-Temporal Patterns for Person Re-Identification
+* (ACM MM 21) MGH: Metadata Guided Hypergraph Modeling for Unsupervised Person Re-identification
 
 
 
 ## Unsupervised reID
 
-### State of the art
+#### State of the art
 
 **Unsupervised domain adaptation  (Rank-1 Rank-5 mAP)**
 
 | method     | reference | DukeMTMC->Market-1501 | Market-1501->DukeMTMC |
 | ---------- | --------- | --------------------- | --------------------- |
+| IDM        | ICCV 21   | 93.2 97.5 82.8        | 83.6 91.5 93.7        |
 | GLT        | CVPR 21   | 92.2 96.5 79.5        | 82.0 90.2 69.2        |
 | UNRN       | AAAI 21   | 91.9 96.1 78.1        | 82.0 90.7 69.1        |
 | SpCL       | NIPS 20   | 90.3 96.2 76.7        | 82.9 90.1 68.8        |
@@ -98,16 +158,18 @@ Other experiment settings: MSMT17->Market-1501, MSMT17->DukeMTMC, Market-1501->M
 
 **Unsupervised learning (Rank-1 mAP)**
 
-| method  | reference | type     | Market1-501 | DukeMTMC  |
-| ------- | --------- | -------- | ----------- | --------- |
-| CAP     | AAAI 21   | cluster  | 91.4 79.2   | 81.1 67.3 |
-| IICS    | CVPR 21   | cluster  | 89.5 72.9   | 80.0 64.4 |
-| UGA     | ICCV 19   | tracklet | 87.2 70.3   | 75.0 53.3 |
-| MetaCam | CVPR 21   | cluster  | 83.9 61.7   | 73.8 53.8 |
-| TAUDL   | ECCV 18   | tracklet | 63.7 41.2   | 61.7 43.5 |
-| BUC     | AAAI 19   | cluster  | 66.2 38.3   | 47.4 27.5 |
+| method  | reference | type        | Market1-501 | DukeMTMC         |
+| ------- | --------- | ----------- | ----------- | ---------------- |
+| PPLR    | CVPR 22   | clustering  | 94.3 84.4   | \-\-:\-  \-\-:\- |
+| ICE     | ICCV 21   | contrastive | 93.8 82.3   | 83.3 69.9        |
+| CAP     | AAAI 21   | clustering  | 91.4 79.2   | 81.1 67.3        |
+| IICS    | CVPR 21   | clustering  | 89.5 72.9   | 80.0 64.4        |
+| UGA     | ICCV 19   | tracklet    | 87.2 70.3   | 75.0 53.3        |
+| MetaCam | CVPR 21   | clustering  | 83.9 61.7   | 73.8 53.8        |
+| TAUDL   | ECCV 18   | tracklet    | 63.7 41.2   | 61.7 43.5        |
+| BUC     | AAAI 19   | clustering  | 66.2 38.3   | 47.4 27.5        |
 
-### Organized by authors
+#### Organized by authors & reverse chronological
 
 Wei-Shi Zheng (SYSU)
 
@@ -243,78 +305,263 @@ CVPR 17 (2/2)
 
 
 
-## Cross-modal reID
+## Generalizable reID
+
+* (CVPR 19) Generalizable Person Re-Identification by Domain-Invariant Mapping Network
+* (CVPR 20) Style Normalization and Restitution for Generalizable Person Re-Identification
+* (ECCV 20) Generalizing Person Re-Identification by Camera-Aware Invariance Learning and Cross-Domain Mixup
+* (AAAI 21) Dual Distribution Alignment Network for Generalizable Person Re-Identification
+* (CVPR 21) Meta Batch-Instance Normalization for Generalizable Person Re-Identification
+* (CVPR 21) Generalizable Person Re-Identification with Relevance-aware Mixture of Experts
+
+
+
+## Cross-modality reID
+
+* (ICCV 17) RGB-Infrared Cross-Modality Person Re-Identification
+* (IJCAI 18) Cross-Modality Person Re-Identification with Generative Adversarial Training
+* (CVPR 19) Learning to Reduce Dual-Level Discrepancy for Infrared-Visible Person Re-Identification
+* (ICCV 19) RGB-Infrared Cross-Modality Person Re-Identification via Joint Pixel and Feature Alignment
+* (AAAI 20) Cross-Modality Paired-Images Generation for RGB-Infrared Person Re-Identification
+* (CVPR 20) Hi-CMD: Hierarchical Cross-Modality Disentanglement for Visible-Infrared Person Re-Identification
+* (CVPR 20) Cross-Modality Person Re-Identification with Shared-Specific Feature Transfer
+* (ECCV 20) Dynamic Dual-Attentive Aggregation Learning for Visible-Infrared Person Re-Identification
+* (CVPR 21) Neural Feature Search for RGB-Infrared Person Re-Identification
+* (CVPR 21) Farewell to Mutual Information: Variational Distillation for Cross-Modal Person Re-Identification
+* (CVPR 21) Discover Cross-Modality Nuances for Visible-Infrared Person Re-Identification
+* (ICCV 21) Syncretic Modality Collaborative Learning for Visible Infrared Person Re-Identification
+* (ICCV 21) Learning by Aligning: Visible-Infrared Person Re-Identification Using Cross-Modal Correspondences
+* (ICCV 21) Cross-Modality Person Re-Identification via Modality Confusion and Center Aggregation
+
+#### Reading notes
+
+Zero-Padding (ICCV 17, SYSU)
+
+* 背景：暗场景 => 红外相机
+* 设置：SYSU-MM01
+  * 491人，4个RGB相机的287628张图+2个红外相机的15792张图
+  * all-search & indoor-search, single-shot & multi-shot
+* 模型
+  * 双流结构一般浅层参数为域特定，深层参数共享
+  * 通过zero-padding输入，可以使单流结构内部也产生zero-padding（即域特定参数）
+
+cmGAN (IJCAI 18, Xiamen)
+
+* 背景：跨模态re-id缺少跨模态的分辨信息；难学到鲁邦的尺度
+* 模型：辨别器；triplet loss
+* 设置：SYSU-MM01全部模式
+
+D^2^RL (CVPR 19, NII)
+
+* 背景：IV-REID的模态差异和外观差异
+* 模型
+  * GAN减少图像级差异（模态差异）
+  * 特征嵌入网络减少特征级差异（外观差异）
+* 设置
+  * RegDB：1个可见光相机+1个近红外光相机，412人*(10张可见+10张红外)
+  * SYSU-MM01：4个可见光相机+2个远红外光相机，491人*(>2个相机)，使用single-shot all-search模式
+
+AlignGAN (ICCV 19, CAS)
+
+* 背景：特征对齐的方法忽视了像素对齐
+* 模型
+  * 两个GAN分别实现像素对齐和特征对齐
+  * 共用辨别器来学习id一致的特征
+* 设置：SYSU-MM01全部设置+RegDB
+
+JSIA-ReID (AAAI 20, CAS)
+
+* 背景：set级别跨模态对齐➡️个体级别对齐
+* 模型：
+  * GAN生成跨模态图片对
+  * GAN的encoder完成set级别特征对齐，额外encoder完成个体级别特征对齐
+* 设置：SYSU-MM01全部设置+RegDB
+
+cm-SSFT (CVPR 20, USTC)
+
+* 背景：学习模态共享特征的方法丢弃了模态特异信息，需要补偿
+* 模型
+  * 双流结构抽取共享特征和域特异特征
+  * 在同模态和跨模态邻居间传递特征，补偿特异特征、完善共享特征
+* 设置：SYSU-MM01全部设置+RegDB
+
+Hi-CMD (CVPR 20, KAIST)
+
+* 背景：VI-REID的模态内和模态间差异
+* 模型：解耦id相关因素和id无关因素
+* 设置：RegDB+SYSU-MM01 single-shot all-search
+
+DDAG (ECCV 20, UAE)
+
+* 背景：全局特征对噪声敏感
+* 模型
+  * 模态内采取part注意力机制
+  * 模态间采取图注意力机制提供上下文信息
+* 设置：RegDB+SYSU-MM01 single-shot
+
+Hc-Tri (TMM 20, Chongqing)
+
+* 背景：双流结构的参数共享比例未被研究；噪声样本破坏训练
+* 模型
+  * 探索双流结构的参数共享比例
+  * 基于各模态样本中心的triplet loss（算一种松弛）
+* 设置：RegDB+SYSU-MM01 single-shot
+
+MPANet (CVPR 21, Xiamen)
+
+* 背景：细微差别未被探索
+* 模型
+  * 首先减小模态差异：IN+类似SE-Net的通道mask
+  * 将特征图分为若干区域，得到局部特征连接
+  * loss：特征图分割多样、模态间mutual learning
+* 设置：SYSU-MM01全部设置+RegDB
+
+VSD (CVPR 21, ECNU)
+
+* 信息瓶颈的应用
+
+NFS (CVPR 21, CUG)
+
+* NAS的应用
+
+SMCL (ICCV 21, Xidian)
+
+* 背景：构造中间模态的方法忽视了特征分布
+* 模型
+  * 对红外模态的分类loss增加难度
+  * 缩小不同模态的特征距离
+* 设置：SYSU-MM01全部设置+RegDB
+
+MCLNet (ICCV 21, BIT)
+
+* 背景：GAN引入噪声、增加计算负担和不确定性
+* 模型
+  * 模态混淆学习
+  * 关于id和相机的边际center loss
+* 设置：RegDB+SYSU-MM01 single-shot
+
+LbA (ICCV 21, Yonsei)
+
+* 背景：跨模态图片间的不对齐问题
+* 模型
+  * 将红外特征warp到可见特征，带mask
+  * id一致loss+基于特征图的triplet loss
+* 设置：RegDB+SYSU-MM01 single-shot
+
+#### State of the art
+
+* SYSU-MM01: MCLNet
+* RegDB: SMCL
 
 
 
 ##Lifelong reID
 
+* (AVSS 19) Continuous Learning without Forgetting for Person Re-Identification
+* (AAAI 21) Generalising without Forgetting for Lifelong Person Re-Identification
+* (WACV 21) Continual Representation Learning for Biometric Identification
+* (CVPR 21) Lifelong Person Re-Identification via Adaptive Knowledge Accumulation
+* (CVPR 22) Lifelong Unsupervised Domain Adaptive Person Re-Identification with Coordinated Anti-forgetting and Adaptation
+* TODO: add papers
 
+#### Reading notes
+
+LwF (AVSS 19, Australia)
+
+* 背景
+
+  * joint-training的问题：旧数据可能不可用，数据增加后时间空间代价大
+
+  * fine-tuning的问题：遗忘旧任务（神经网络更新时全局受影响）
+
+  * Learning without forgetting：cross-entropy loss+distillation loss
+    * 与KD不同：在新任务图片上蒸馏
+    * 相比fine-tuning：在新任务性能低，旧任务性能高
+    * 相比joint-training：在新旧任务性能低，训练快且不需要旧数据
+
+* 设置：单个数据集（Duke或Market）按身份或相机被分成等大的子集，每阶段训练后分别在旧任务和新任务上测试。测试数据从训练数据中按比例选出
+* 结果
+  * LwF能缓解遗忘问题（下降29%->下降19%）
+  * 最好的训练策略：初期增加身份，后期增加相机
+
+CRL (WACV 21, Edinburgh&SenseTime)
+
+* 背景：CL用于re-id不理想
+  * re-id的训练集间类别不重合，因此遗忘问题较少，主要是泛化问题。
+  * re-id是细粒度分类，需要可规模性
+* 设置
+  * 分face和re-id
+  * 将Market、Duke和MSMT17合为CRL-person，分成5或10个子集。测试集合并、缩小
+* 模型
+  * 关注没有memory，只有上步模型的情形
+  * 类别过多难以计算logit后KD：在邻居类别上算分类概率的KL散度
+  * KD限制学习新数据能力：设置成比例margin松弛KL散度
+
+GwFReID (AAAI 21, QMUL)
+
+* 背景：LL不能直接用于re-id
+  * re-id任务是zero-shot，训练集测试集不重合
+  * re-id的不同stream来自具有不同类别的不同domain，难以平衡信息
+  * re-id的类别不均衡
+* 模型
+  * 分类连贯：维护旧数据的exemplar memory，和新数据一起计算分类loss（这处理了类别不均衡），后期关注新数据为主的难样本
+  * 分布连贯：前期在新数据上KD
+  * 表示连贯：前期对特征加triplet loss、约束旧prototype特征连贯
+* 设置
+  * non re-id：CIFAR-100或ImageNet一半类别作为初始，剩下的类别分5份，共6阶段
+  * re-id：Market->Duke->CUHK-SYSU->MSMT17共4阶段；在CUHK03/iLIDS/VIPeR/3dPeS上测试泛化性
+  * 评价指标
+    * incremental learning性能：在所有已见数据集上测出average incremental accuracy
+    * lifelong generalized性能：结束时在所有数据集上性能
+    * forgetting ratio：结束时比开始时在初始数据上mAP和R1平均值的下降比例
+
+LReID (CVPR 21, Leiden)
+
+* 背景：LReID vs LL
+  * 类别多
+  * 类别不均衡。model degradation通常发生在tail classes，因此面临few-shot挑战
+  * 细粒度，类间差距小
+  * 需要泛化到未见类别
+* 模型
+  * 知识表示：样本相似度图、知识图
+  * 知识操作：知识转移（图卷积）、知识积累（triplet loss+知识稳定性）
+* 设置：LReID-Seen分5阶段，CU, MA, MS, DU, SY，有两种训练顺序；LReID-Unseen由7个数据集组成，目的是测试积累的知识
+* 结果：训练顺序明显影响性能（从易到难比从难到易忘的少，泛化也更好）
+
+CLUDA-ReID (USTC&MSRA)
+
+* 背景
+  * UDA与应用不一致：新身份出现，数据变化
+  * LL忽视re-id的任务性质例如learning to rank
+  * LReID要求人工标注，耗时，不保护隐私；没有协调反遗忘和域适应
+
+* 模型
+  * 用meta-optimization来协调反遗忘和域适应
+  * KD加入关系一致性
+* 设置：
+  * stationary：PX->MA分5阶段
+  * dynamic：PX->MA->SY->MS->MA->SY->MS；未见数据上的泛化能力MMP-ReID
 
 
 
 ##Long-term reID
 
-Contour (TPAMI'19)
-
-* select discriminative contour pattern
-
-// SpTSkM (TMM'20)
-
-CASE-Net
-
-* grayscale disentanglement
-
-// RF-ReID (CVPR'20)
-
-##### Datasets
-
-Celebrities-ReID (IJCNN'19)
-
-* 590*10842 snap-shots
-* 2-stream: full + part
-
-Celeb-reID (TSCVT'20)
-
-* 1052*34186 snap-shots
-* 3-module: capsuale, 2 auxiliary 
-
-LTCC (ACCV'20)
-
-* 152*17138 CCTV
-* shape embedding + disentangle shape & cloth (IN+residual)
-
-COCAS (CVPR'20)
-
-* 5266*62382 market (query include cloth template)
-* 2-branch: biometric branch + cloth branch
-
-Real28+VC-Clothes (CVPRW'20)
-
-* 28\*4324 student +512\*19060 GTA5
-* 3-stream: appearance + part + face
-
-
-
-## Person search
-
-
-| from  | method                                               | motivation                    | mAP (CUHK-SYSU) | top-1 (CUHK-SYSU) | mAP (PRW) | top-1 (PRW) |
-| ----- | ---------------------------------------------------- | ----------------------------- | --------------- | ----------------- | --------- | ----------- |
-| CUHK  | (CVPR 17) OIM: online matching with lookup table     | joint detection and reID      | 75.5            | 78.7              | 21.3      | 49.9        |
-| TUM   |                                                      | => larger image               | 83.3            | 84.2              | 38.3      | 70.0        |
-| XJTU  | (2017) IAN: center loss                              | intra-class variance          | 77.2            | 80.5              | 23.0      | 61.9        |
-| HFUT  | (ICCV 17) NPSM: recursive region shrinking with lstm | query-guided proposal         | 77.9            | 81.2              | 24.2      | 53.0        |
-| CMU   | (ECCV 18) RCAA: context-aware agent modifies bbox    | query-guided proposal with RL | 79.5            | 81.3              | -         | -           |
-| NJUST | (ECCV 18) MGTS: mask-guided two-stream               | emphasize foreground info     | 83.0            | 83.7              | 32.6      | 72.1        |
-| QMUL  | (ECCV 18) CLSA: in-network feature pyramid           | multi-scale feature           | 87.2            | 88.5              | 38.7      | 65.0        |
-| SJTU  | (CVPR 19) contextual instance graph                  | learn contexual info          | 84.1            | 86.5              | 33.4      | 73.6        |
-| TUM   | (CVPR 19) QEEPS: query-guided SSE-Net, RPN, simNet   | leverage query extensively    | 88.9            | 89.1              | 39.1      | 80.0        |
-| HUST  | (ICCV 19) regression => reID gradient                | refine detection              | 93.0            | 94.2              | 42.9      | 70.2        |
+* (TPAMI 19) Person Re-Identification by Contour Sketch under Moderate Clothing Change
+* (IJCNN 19) Celebrities-ReID: A Benchmark for Clothes Variation in Long-Term Person Re-Identification
+* (ACCV 20) Long-Term Cloth-Changing Person Re-Identification
+* (CVPR 20) COCAS: A Large-Scale Clothes Changing Person Dataset for Re-Identification
 
 
 
 ## Group reID
+
+* (BMVC 09) Associating Groups of People
+* (ICCV 17) Group Re-Identification via Unsupervised Transfer of Sparse Features Encoding
+* (ACM MM 18) Group Re-Identification: Leveraging and Integrating Multi-Grain Information
+* (CVPR 19) Learning Context Graph for Person Search
+* (CVPR 22) Modeling 3D Layout for Group Re-Identification
+
+#### Reading notes
 
 Duke: DukeMTMC group dataset, Road: Road group dataset
 
@@ -326,7 +573,46 @@ Duke: DukeMTMC group dataset, Road: Road group dataset
 | UniFI | (ICCV 17) PREF: mask + sparse encoding                       | spatial displacement                         | 22.3       | 44.3       | 43.0       | 68.7       |
 | SJTU  | (MM 18) MGR: multi-grain representation + matching           | group granularity                            | 47.4       | 68.1       | 72.3       | 90.6       |
 | SJTU  | (TCYB 19) hand=>conv                                         | utilize dl                                   | 48.4       | 75.2       | 80.2       | 93.8       |
-| NTHU  | TSCN: learn single&couple representation on transferred reID dataset | too few images to learn group representation | 86.4       | 98.8       | 84.0       | 95.1       |
+| NTHU  | (arXiv 19) DotSCN: learn single&couple representation on transferred reID dataset | too few images to learn group representation | 86.4       | 98.8       | 84.0       | 95.1       |
+
+PREF 及之前的工作：(1) 设计descriptor (2) 当作patch matching任务
+
+MGR 与 TSCN 比较（唯二基于检测个体的工作）
+
+|      | group similarity                                 | geometry信息   |
+| ---- | ------------------------------------------------ | -------------- |
+| MGR  | 基于single similarity和距离，自下而上计算4项融合 | 利用图片中距离 |
+| TSCN | 融合single similarity和另学的couple similarity   | 完全丢弃       |
+
+
+
+## Person search
+
+* (ACM MM 14) Person Search in a Scene by Jointly Modeling People Commonness and Person Uniqueness
+* (CVPR 17) Joint Detection and Identification Feature Learning for Person Search
+* (ICCV 17) Neural Person Search Machines
+* (ICCV 19) Re-ID Driven Localization Refinement for Person Search
+* (CVPR 20) Robust Partial Matching for Person Search in the Wild
+* (CVPR 20) Norm-Aware Embedding for Efficient Person Search
+* (CVPR 21) Anchor-Free Person Search
+
+#### Reading notes
+
+
+| from  | method                                               | motivation                    | mAP (CUHK-SYSU) | top-1 (CUHK-SYSU) | mAP (PRW) | top-1 (PRW) |
+| ----- | ---------------------------------------------------- | ----------------------------- | --------------- | ----------------- | --------- | ----------- |
+| CUHK  | (CVPR 17) OIM: online matching with lookup table     | joint detection and reID      | 75.5            | 78.7              | 21.3      | 49.9        |
+| TUM   |                                                      | => larger image               | 83.3            | 84.2              | 38.3      | 70.0        |
+| XJTU  | (arXiv 2017) IAN: center loss                        | intra-class variance          | 77.2            | 80.5              | 23.0      | 61.9        |
+| HFUT  | (ICCV 17) NPSM: recursive region shrinking with lstm | query-guided proposal         | 77.9            | 81.2              | 24.2      | 53.0        |
+| CMU   | (ECCV 18) RCAA: context-aware agent modifies bbox    | query-guided proposal with RL | 79.5            | 81.3              | -         | -           |
+| NJUST | (ECCV 18) MGTS: mask-guided two-stream               | emphasize foreground info     | 83.0            | 83.7              | 32.6      | 72.1        |
+| QMUL  | (ECCV 18) CLSA: in-network feature pyramid           | multi-scale feature           | 87.2            | 88.5              | 38.7      | 65.0        |
+| SJTU  | (CVPR 19) contextual instance graph                  | learn contexual info          | 84.1            | 86.5              | 33.4      | 73.6        |
+| TUM   | (CVPR 19) QEEPS: query-guided SSE-Net, RPN, simNet   | leverage query extensively    | 88.9            | 89.1              | 39.1      | 80.0        |
+| HUST  | (ICCV 19) regression => reID gradient                | refine detection              | 93.0            | 94.2              | 42.9      | 70.2        |
+
+person search = detection + re-identification，大部分工作改进其中一部分，或都改进
 
 
 
