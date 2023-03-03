@@ -4,7 +4,7 @@ This repository contains person re-identification papers (mostly until 2021) org
 
 
 
-Content
+#### Content
 
 * [Survey](#Survey)
 * [Supervised reID](#Supervised-reID)
@@ -44,6 +44,7 @@ Content
 * (CVPR 15) An Improved Deep Learning Architecture for Person Re-Identification
 * (ECCV 16) Gated Siamese Convolutional Neural Network Architecture for Human Re-Identification
 * (ICCV 17) A Two Stream Siamese Convolutional Neural Network for Person Re-Identification
+* (CVPR 22) Dual Cross-Attention Learning for Fine-Grained Visual Categorization and Object Re-Identification
 
 **Identification**
 
@@ -55,7 +56,8 @@ Content
 * (CVPRW 19) Bag of Tricks and a Strong Baseline for Deep Person Re-Identification
 * (ICCV 19) Omni-Scale Feature Learning for Person Re-Identification
 * (ICCV 21) TransReID: Transformer-based Object Re-Identification
-* TODO: more transformers
+* (ACM MM 21) HAT: Hierarchical Aggregation Transformers for Person Re-identification
+* (CVPR 22) NFormer: Robust Person Re-identification with Neighbor Transformer
 
 Attention
 
@@ -76,7 +78,7 @@ Attention
 * (ECCV 18) Beyond Part Models: Person Retrieval with Refined Part Pooling (and a Strong Convolutional Baseline)
 * (ACM MM 18) Learning Discriminative Features with Multiple Granularities for Person Re-Identification
 * (CVPR 19) Patch-based Discriminative Feature Learning for Unsupervised Person Re-Identification
-* TODO: part based / occluded
+* (CVPR 21) Diverse Part Discovery: Occluded Person Re-identification with Part-Aware Transformer
 
 
 
@@ -92,9 +94,11 @@ Attention
 * (TIP 19) Pose-Invariant Embedding for Deep Person Re-Identification
 * (CVPR 19) Densely Semantically Aligned Person Re-Identification
 * (ECCV 20) Identity-Guided Human Semantic Parsing for Person Re-Identification
+* (ACM MM 21) Pose-guided Inter- and Intra-part Relational Transformer for Occluded Person Re-Identification
+* (CVPR 22) Motion-Aware Transformer For Occluded Person Re-identification
 * (TPAMI 22) Pose-Guided Representation Learning for Person Re-Identification
 * (TPAMI 22) Multi-Task Learning With Coarse Priors for Robust Part-Aware Person Re-Identification
-* TODO: person-reid-3d: estimated mesh as input
+* (TNNLS 22) Parameter-Efficient Person Re-identification in the 3D Space
 
 
 
@@ -346,8 +350,10 @@ CVPR 17 (2/2)
 * (AAAI 21) Generalising without Forgetting for Lifelong Person Re-Identification
 * (WACV 21) Continual Representation Learning for Biometric Identification
 * (CVPR 21) Lifelong Person Re-Identification via Adaptive Knowledge Accumulation
+* (AAAI 22) Lifelong Person Re-identification by Pseudo Task Knowledge Preservation
 * (CVPR 22) Lifelong Unsupervised Domain Adaptive Person Re-Identification with Coordinated Anti-forgetting and Adaptation
-* TODO: add papers
+* (ACM MM 22) Patch-based Knowledge Distillation for Lifelong Person Re-Identification
+* (ACM MM 22) Meta Reconciliation Normalization for Lifelong Person Re-Identification
 
 
 
