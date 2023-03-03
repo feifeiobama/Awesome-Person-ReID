@@ -1,6 +1,6 @@
 # Awesome Person ReID
 
-This repository contains a curated list of person re-identification papers (mostly until 2021) orgnized by topics. Please feel free to pull request.
+This repository contains a curated list of person re-identification papers (mostly until 2021) orgnized by topics.
 
 * [Survey](#Survey)
 * [Supervised reID](#Supervised-reID)
