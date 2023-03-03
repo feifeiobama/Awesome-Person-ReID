@@ -15,7 +15,6 @@ This repository contains a curated list of person re-identification papers (most
   * [Long-term reID](##Long-term-reID)
   * [Group reID](##Group-reID)
   * [Person search](##Person-search)
-
 * [Datasets](#Datasets)
 
 
@@ -318,7 +317,7 @@ CVPR 17 (2/2)
 
 
 
-##Lifelong reID
+## Lifelong reID
 
 * (AVSS 19) Continuous Learning without Forgetting for Person Re-Identification
 * (AAAI 21) Generalising without Forgetting for Lifelong Person Re-Identification
