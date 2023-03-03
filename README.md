@@ -1,46 +1,113 @@
-# Unsupervised re-id notes
+# Awesome Person ReID
 
-## State of the art
+This repository contains person re-identification papers (mostly until 2021) orgnized by topics. Please feel free to pull request.
 
-#### Adaption methods  (Rank-1 Rank-5 mAP)
 
-| method | reference | DukeMTMC->Market-1501 | Market-1501->DukeMTMC |
-| --------- | -------------- | --------- | --------- |
-| GLT | CVPR 21 | 92.2 96.5 79.5 | 82.0 90.2 69.2 |
-| UNRN | AAAI 21 | 91.9 96.1 78.1 | 82.0 90.7 69.1 |
-| SpCL | NIPS 20 | 90.3 96.2 76.7 | 82.9 90.1 68.8 |
-| MEB-Net | ECCV 20 | 89.9 96.0 76.0 | 79.6 88.3 66.1 |
-| MMT | ICLR 20 | 87.7 94.9 71.2 | 78.0 88.8 65.1 |
-| CycAs | ECCV 20 | 84.8  --:-  64.8 | 77.9  --:-  60.1 |
-| AD-Cluster | CVPR 20 | 86.7 94.4 68.3 | 72.6 82.5 54.1 |
-| SNR | CVPR 20 | 82.8  --:-  61.7 | 76.3  --:-  58.1 |
-| JVTC | ECCV 20 | 83.8 93.0 61.1 | 75.0 85.1 56.2 |
-| ACT | AAAI 20 | 80.5  \-\-:\-  60.6 | 72.4  \-\-:\-  54.5 |
-| MMCL | CVPR 20 | 84.4 92.8 60.4 | 72.4 82.9 51.3 |
-| SSG      | ICCV 19 | 80.0 90.0 58.3 | 73.0 80.6 53.4 |
-| HCT | CVPR 20 | 80.0 91.6 56.4 | 69.6 83.4 50.7 |
-| PAST | ICCV 19 | 78.4  \-\-:\-  54.6 | 72.4 \-\-\-:\- 54.3 |
-| PDA-Net | ICCV 19 | 75.2 86.3 47.6 | 63.2 77.0 45.1 |
-| ECN | CVPR 19 | 75.1 87.6 43.0 | 63.3 75.8 40.4 |
-| PAUL | CVPR 19 | 66.7  \-\-:\-  36.8 | 56.1  \-\-:\-  35.7 |
-| CASCL     | ICCV 19 | 64.7 80.2 35.6 | 51.5 66.7 30.5 |
-| SPGAN | CVPR 18 | 58.1 76.0 26.9 | 46.9 62.6 26.4 |
-| ATNet | ICCV 19 | 55.7 73.2 25.6 | 45.1 59.5 24.9 |
 
-Other experiment settings: MSMT17->Market-1501, MSMT17->DukeMTMC, Market-1501->**MSMT17** DukeMTMC->**MSMT17**, CUHK03->Market-1501, CUHK03->DukeMTMC, Market-1501->**PRID2011** (**bold** means difficult)
+Content
 
-#### Methods without source domain pretrain (Rank-1 mAP)
+* [Survey](#Survey)
+* [Supervised reID](#Supervised reID)
+  * [Structural reID](##Structural reID)
+  * [Spatial-temporal reID](##Spatial-temporal reID)
+* [Unsupervised reID](#Unsupervised reID)
+* [Cross-modal reID](#Cross-modal reID)
+* [Lifelong reID](#Lifelong reID)
+* [Long-term reID](#Long-term reID)
+* [Person search](#Person search)
+* [Group reID](#Group reID)
+* [Datasets](#Datasets)
 
-| method | reference | type | Market1-501 | DukeMTMC |
-| --------- | -------------- | -------------- | --------- | --------- |
-| CAP | AAAI 21 | cluster | 91.4 79.2 | 81.1 67.3 |
-| IICS | CVPR'21 | cluster | 89.5 72.9 | 80.0 64.4 |
-| UGA | ICCV 19 | tracklet | 87.2 70.3 | 75.0 53.3 |
-| MetaCam | CVPR'21 | cluster | 83.9 61.7 | 73.8 53.8 |
-| TAUDL  | ECCV 18   | tracklet | 63.7 41.2   | 61.7 43.5 |
-| BUC    | AAAI 19   | cluster  | 66.2 38.3   | 47.4 27.5 |
 
-## Reading notes
+
+## Survey
+
+
+
+
+
+## Supervised reID
+
+
+
+### Structural reID
+
+PDC (ICCV'17), PGR (TPAMI'19) part or recombined parts as input
+
+PN-GAN (ECCV'18) synthesize images of 8 canonical poses, fuse 9 features
+
+FD-GAN (NeurIPS'18) distill pose-unrelated info
+
+PersonX (CVPR'19) synthesize shape, pose, viewpoint, ...
+
+DG-Net (CVPR'19) ? disentangle appearance and structure, learn from both
+
+Contour (TPAMI'19) contour as input
+
+person-reid-3d: estimated mesh as input
+
+
+
+### Spatial-temporal reID
+
+D: DukeMTMC, M: Market-1501
+
+| from | method                                                       | motivation                                   | full name | D rank1 | D mAP | M rank1 | M mAP |
+| ---- | ------------------------------------------------------------ | -------------------------------------------- | --------- | ------- | ----- | ------- | ----- |
+| UCF  | (ECCV 16) [PSE](https://link.springer.com/chapter/10.1007/978-3-319-46475-6_8): speed, grouping, invisible speed | crowds & social force                        |           |         |       |         |       |
+| WHU  | (MMM 16) [CNPR](https://link.springer.com/chapter/10.1007/978-3-319-27671-7_15): fit Weibull distribution | constraints of min walking time              |           |         |       |         |       |
+| GIST | (17) distance based camera network topology inference        | infer topology, deal with speed              |           |         |       |         |       |
+| GIST | (ICCV 17 Workshop) [unified](https://arxiv.org/abs/1704.07085): R-squared statics; cam2cam & zone2zone | solve ... jointly                            |           |         |       |         |       |
+| SCUT | (CVPR 18) [TFusion](https://arxiv.org/abs/1803.07293): bayesian fusion; learn to rank | similarity, FP, FT are independent of camera |           |         |       | 73.1    |       |
+| SYSU | (AAAI 19) [st-ReID](https://arxiv.org/abs/1812.03282): laplace smoothing + logistic | joint metric                                 |           | 94.4    | 83.9  | 98.1    | 87.6  |
+|      | st-ReID + k-reciprocal                                       |                                              |           | 94.5    | 92.7  | 98.0    | 95.5  |
+| USTC | [TASTR](https://arxiv.org/abs/1910.11560): within-/cross-camera triplet loss | precision of tracklet association            |           | 74.1    | 54.4  |         |       |
+
+
+
+## Unsupervised reID
+
+### State of the art
+
+**Unsupervised domain adaptation  (Rank-1 Rank-5 mAP)**
+
+| method     | reference | DukeMTMC->Market-1501 | Market-1501->DukeMTMC |
+| ---------- | --------- | --------------------- | --------------------- |
+| GLT        | CVPR 21   | 92.2 96.5 79.5        | 82.0 90.2 69.2        |
+| UNRN       | AAAI 21   | 91.9 96.1 78.1        | 82.0 90.7 69.1        |
+| SpCL       | NIPS 20   | 90.3 96.2 76.7        | 82.9 90.1 68.8        |
+| MEB-Net    | ECCV 20   | 89.9 96.0 76.0        | 79.6 88.3 66.1        |
+| MMT        | ICLR 20   | 87.7 94.9 71.2        | 78.0 88.8 65.1        |
+| CycAs      | ECCV 20   | 84.8  --:-  64.8      | 77.9  --:-  60.1      |
+| AD-Cluster | CVPR 20   | 86.7 94.4 68.3        | 72.6 82.5 54.1        |
+| SNR        | CVPR 20   | 82.8  --:-  61.7      | 76.3  --:-  58.1      |
+| JVTC       | ECCV 20   | 83.8 93.0 61.1        | 75.0 85.1 56.2        |
+| ACT        | AAAI 20   | 80.5  \-\-:\-  60.6   | 72.4  \-\-:\-  54.5   |
+| MMCL       | CVPR 20   | 84.4 92.8 60.4        | 72.4 82.9 51.3        |
+| SSG        | ICCV 19   | 80.0 90.0 58.3        | 73.0 80.6 53.4        |
+| HCT        | CVPR 20   | 80.0 91.6 56.4        | 69.6 83.4 50.7        |
+| PAST       | ICCV 19   | 78.4  \-\-:\-  54.6   | 72.4 \-\-\-:\- 54.3   |
+| PDA-Net    | ICCV 19   | 75.2 86.3 47.6        | 63.2 77.0 45.1        |
+| ECN        | CVPR 19   | 75.1 87.6 43.0        | 63.3 75.8 40.4        |
+| PAUL       | CVPR 19   | 66.7  \-\-:\-  36.8   | 56.1  \-\-:\-  35.7   |
+| CASCL      | ICCV 19   | 64.7 80.2 35.6        | 51.5 66.7 30.5        |
+| SPGAN      | CVPR 18   | 58.1 76.0 26.9        | 46.9 62.6 26.4        |
+| ATNet      | ICCV 19   | 55.7 73.2 25.6        | 45.1 59.5 24.9        |
+
+Other experiment settings: MSMT17->Market-1501, MSMT17->DukeMTMC, Market-1501->MSMT17 DukeMTMC->MSMT17, CUHK03->Market-1501, CUHK03->DukeMTMC, Market-1501->PRID2011
+
+**Unsupervised learning (Rank-1 mAP)**
+
+| method  | reference | type     | Market1-501 | DukeMTMC  |
+| ------- | --------- | -------- | ----------- | --------- |
+| CAP     | AAAI 21   | cluster  | 91.4 79.2   | 81.1 67.3 |
+| IICS    | CVPR 21   | cluster  | 89.5 72.9   | 80.0 64.4 |
+| UGA     | ICCV 19   | tracklet | 87.2 70.3   | 75.0 53.3 |
+| MetaCam | CVPR 21   | cluster  | 83.9 61.7   | 73.8 53.8 |
+| TAUDL   | ECCV 18   | tracklet | 63.7 41.2   | 61.7 43.5 |
+| BUC     | AAAI 19   | cluster  | 66.2 38.3   | 47.4 27.5 |
+
+### Organized by authors
 
 Wei-Shi Zheng (SYSU)
 
@@ -92,7 +159,7 @@ Pong C Yuen (HKBU)
 | ECCV 18 | [Robust Anchor Embedding for Unsupervised Video Person Re-Identification in the Wild](http://openaccess.thecvf.com/content_ECCV_2018/papers/Mang_YE_Robust_Anchor_Embedding_ECCV_2018_paper.pdf) | RACE: embedding weight of kNN anchors                        | imbalanced unlabeled data, scalability |
 | ICCV 17 | [Dynamic Label Graph Matching for Unsupervised Video Re-Identification](http://openaccess.thecvf.com/content_ICCV_2017/papers/Ye_Dynamic_Label_Graph_ICCV_2017_paper.pdf) | DGM: cross-camera graph matching by neighborhood cost with re-weighed labels | cross-camera label estimation          |
 
-#### Others authors
+**Others authors**
 
 AAAI 21
 
@@ -156,7 +223,7 @@ CVPR 18 (2/5)
 | from  | title                                                        | method                                  | motivation                              |
 | ----- | ------------------------------------------------------------ | --------------------------------------- | --------------------------------------- |
 | SCUT  | [Unsupervised Cross-dataset Person Re-identification by Transfer Learning of Spatial-Temporal Patterns](http://openaccess.thecvf.com/content_cvpr_2018/papers/Lv_Unsupervised_Cross-Dataset_Person_CVPR_2018_paper.pdf) | TFusion: bayesian fusion, learn to rank | ST indecent of feature, constant FP, FN |
-| TRACE | [Disentangled Person Image Generation](http://openaccess.thecvf.com/content_cvpr_2018/papers/Ma_Disentangled_Person_Image_CVPR_2018_paper.pdf)                         | disentangle FG, BG, pose                | explicitly guide image genration        |
+| TRACE | [Disentangled Person Image Generation](http://openaccess.thecvf.com/content_cvpr_2018/papers/Ma_Disentangled_Person_Image_CVPR_2018_paper.pdf) | disentangle FG, BG, pose                | explicitly guide image genration        |
 
 ICCV 17 (4/7)
 
@@ -171,5 +238,115 @@ CVPR 17 (2/2)
 
 | from            | title                                                        | method | motivation |
 | --------------- | ------------------------------------------------------------ | ------ | ---------- |
-| Disney Research | [One-Shot Metric Learning for Person Re-identification](http://openaccess.thecvf.com/content_cvpr_2017/papers/Bak_One-Shot_Metric_Learning_CVPR_2017_paper.pdf)        |        |            |
+| Disney Research | [One-Shot Metric Learning for Person Re-identification](http://openaccess.thecvf.com/content_cvpr_2017/papers/Bak_One-Shot_Metric_Learning_CVPR_2017_paper.pdf) |        |            |
 | UCR             | [Unsupervised Adaptive Re-identification in Open World Dynamic Camera Networks](http://openaccess.thecvf.com/content_cvpr_2017/papers/Panda_Unsupervised_Adaptive_Re-Identification_CVPR_2017_paper.pdf) |        |            |
+
+
+
+## Cross-modal reID
+
+
+
+##Lifelong reID
+
+
+
+
+
+##Long-term reID
+
+Contour (TPAMI'19)
+
+* select discriminative contour pattern
+
+// SpTSkM (TMM'20)
+
+CASE-Net
+
+* grayscale disentanglement
+
+// RF-ReID (CVPR'20)
+
+##### Datasets
+
+Celebrities-ReID (IJCNN'19)
+
+* 590*10842 snap-shots
+* 2-stream: full + part
+
+Celeb-reID (TSCVT'20)
+
+* 1052*34186 snap-shots
+* 3-module: capsuale, 2 auxiliary 
+
+LTCC (ACCV'20)
+
+* 152*17138 CCTV
+* shape embedding + disentangle shape & cloth (IN+residual)
+
+COCAS (CVPR'20)
+
+* 5266*62382 market (query include cloth template)
+* 2-branch: biometric branch + cloth branch
+
+Real28+VC-Clothes (CVPRW'20)
+
+* 28\*4324 student +512\*19060 GTA5
+* 3-stream: appearance + part + face
+
+
+
+## Person search
+
+
+| from  | method                                               | motivation                    | mAP (CUHK-SYSU) | top-1 (CUHK-SYSU) | mAP (PRW) | top-1 (PRW) |
+| ----- | ---------------------------------------------------- | ----------------------------- | --------------- | ----------------- | --------- | ----------- |
+| CUHK  | (CVPR 17) OIM: online matching with lookup table     | joint detection and reID      | 75.5            | 78.7              | 21.3      | 49.9        |
+| TUM   |                                                      | => larger image               | 83.3            | 84.2              | 38.3      | 70.0        |
+| XJTU  | (2017) IAN: center loss                              | intra-class variance          | 77.2            | 80.5              | 23.0      | 61.9        |
+| HFUT  | (ICCV 17) NPSM: recursive region shrinking with lstm | query-guided proposal         | 77.9            | 81.2              | 24.2      | 53.0        |
+| CMU   | (ECCV 18) RCAA: context-aware agent modifies bbox    | query-guided proposal with RL | 79.5            | 81.3              | -         | -           |
+| NJUST | (ECCV 18) MGTS: mask-guided two-stream               | emphasize foreground info     | 83.0            | 83.7              | 32.6      | 72.1        |
+| QMUL  | (ECCV 18) CLSA: in-network feature pyramid           | multi-scale feature           | 87.2            | 88.5              | 38.7      | 65.0        |
+| SJTU  | (CVPR 19) contextual instance graph                  | learn contexual info          | 84.1            | 86.5              | 33.4      | 73.6        |
+| TUM   | (CVPR 19) QEEPS: query-guided SSE-Net, RPN, simNet   | leverage query extensively    | 88.9            | 89.1              | 39.1      | 80.0        |
+| HUST  | (ICCV 19) regression => reID gradient                | refine detection              | 93.0            | 94.2              | 42.9      | 70.2        |
+
+
+
+## Group reID
+
+Duke: DukeMTMC group dataset, Road: Road group dataset
+
+| from  | method                                                       | motivation                                   | Duke rank1 | Duke rank5 | Road rank1 | Road rank5 |
+| ----- | ------------------------------------------------------------ | -------------------------------------------- | ---------- | ---------- | ---------- | ---------- |
+| QMUL  | (BMVC 09) CRRRO-BRO: 2 descriptors of ring regions           | rotation invariant                           | 9.9        | 26.1       | 17.8       | 34.6       |
+| OYO   | (ICPR 10) covariance descriptor                              | illumination invariance                      | 21.3       | 43.6       | 38.9       | 61.0       |
+| USTC  | (ICIP 16) BSC+CM: salience channel +consistent matching      | unreliable patch matches                     | 23.1       | 44.3       | 58.6       | 80.6       |
+| UniFI | (ICCV 17) PREF: mask + sparse encoding                       | spatial displacement                         | 22.3       | 44.3       | 43.0       | 68.7       |
+| SJTU  | (MM 18) MGR: multi-grain representation + matching           | group granularity                            | 47.4       | 68.1       | 72.3       | 90.6       |
+| SJTU  | (TCYB 19) hand=>conv                                         | utilize dl                                   | 48.4       | 75.2       | 80.2       | 93.8       |
+| NTHU  | TSCN: learn single&couple representation on transferred reID dataset | too few images to learn group representation | 86.4       | 98.8       | 84.0       | 95.1       |
+
+
+
+## Datasets
+
+| Dataset       | from   | time | description             | # identities | # cameras   | # images |
+| ------------- | ------ | ---- | ----------------------- | ------------ | ----------- | -------- |
+| VIPeR         | UCSC   | 2007 | -                       | 632          | 2           | 1264     |
+| QMUL iLIDS    | QMUL   | 2009 | airport                 | 119          | 2           | 476      |
+| GRID          | QMUL   | 2009 | underground             | 1025         | 8           | 1275     |
+| PRID2011      | TUGraz | 2011 | campus                  | 934          | 2           | 24541    |
+| CUHK01        | CUHK   | 2012 | campus                  | 971          | 2           | 3884     |
+| CUHK02        | CUHK   | 2013 | campus                  | 1816         | 10(5 pairs) | 7264     |
+| CUHK03        | CUHK   | 2014 | campus                  | 1467         | 10(5 pairs) | 13164    |
+| iLIDS-VID     | QMUL   | 2014 | iLIDS video             | 300          | 2           | 42495    |
+| Market1501    | THU    | 2015 | campus supermarket      | 1501         | 6           | 32217    |
+| PKU-Reid      | PKU    | 2016 | 8 orientations          | 114          | 2           | 1824     |
+| PRW           | UTS    | 2016 | Market1501 full frame   | 932          | 6           | 34304    |
+| MARS          | THU    | 2016 | Market1501 video        | 1261         | 6           | 1191003  |
+| DukeMTMC-reID | Duke   | 2017 | campus                  | 1812         | 8           | 36441    |
+| DukeMTMC4RID  | Duke   | 2017 | Duke SOTA detector      | 1852         | 8           | 46261    |
+| MSMT17        | PKU    | 2018 | scene & lighting change | 4101         | 15          | 126441   |
+
