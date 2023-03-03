@@ -10,7 +10,7 @@ This repository contains a curated list of person re-identification papers (most
 * [Unsupervised reID](#Unsupervised-reID)
 * [Generalizable reID](#Generalizable-reID)
 * [Lifelong reID](#Lifelong-reID)
-* [Misc](#Misc)
+* [Misc topics](#Misc-topics)
   * [Cross-modality reID](##Cross-modality-reID)
   * [Long-term reID](##Long-term-reID)
   * [Group reID](##Group-reID)
@@ -330,7 +330,7 @@ CVPR 17 (2/2)
 
 
 
-## Misc
+## Misc topics
 
 ### Cross-modality reID
 
