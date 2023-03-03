@@ -7,17 +7,17 @@ This repository contains person re-identification papers (mostly until 2021) org
 Content
 
 * [Survey](#Survey)
-* [Supervised reID](#Supervised reID)
-  * [Pose-guided reID](##Pose-guided reID)
-  * [Attribute-guided reID](##Attribute-guided reID)
-  * [Spatial-temporal reID](##Spatial-temporal reID)
-* [Unsupervised reID](#Unsupervised reID)
-* [Generalizable reID](#Generalizable reID)
-* [Cross-modality reID](#Cross-modality reID)
-* [Lifelong reID](#Lifelong reID)
-* [Long-term reID](#Long-term reID)
-* [Group reID](#Group reID)
-* [Person search](#Person search)
+* [Supervised reID](#Supervised-reID)
+  * [Pose-guided reID](##Pose-guided-reID)
+  * [Attribute-guided reID](##Attribute-guided-reID)
+  * [Spatial-temporal reID](##Spatial-temporal-reID)
+* [Unsupervised reID](#Unsupervised-reID)
+* [Generalizable reID](#Generalizable-reID)
+* [Cross-modality reID](#Cross-modality-reID)
+* [Lifelong reID](#Lifelong-reID)
+* [Long-term reID](#Long-term-reID)
+* [Group reID](#Group-reID)
+* [Person search](#Person-search)
 * [Datasets](#Datasets)
 
 
