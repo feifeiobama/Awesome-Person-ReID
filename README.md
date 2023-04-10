@@ -356,7 +356,7 @@ CVPR 17 (2/2)
 
 
 
-###Long-term reID
+### Long-term reID
 
 * (TPAMI 19) Person Re-Identification by Contour Sketch under Moderate Clothing Change
 * (IJCNN 19) Celebrities-ReID: A Benchmark for Clothes Variation in Long-Term Person Re-Identification
